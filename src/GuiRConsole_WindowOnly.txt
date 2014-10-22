@@ -1,0 +1,41 @@
+
+
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
+public class GuiRConsole {
+	
+	public static void main(String[] args) {
+		// （Swing用スレッドで実行する）
+		// この文についての詳細は後述する
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				new GuiRConsole();
+			}
+		});
+	}
+	
+	public GuiRConsole() {
+		initComponents();
+	}
+
+	private void initComponents() {
+		// JFrameを作成
+		JFrame frame = createFrame();
+		// JFrameを表示する
+		frame.setVisible(true);
+	}
+	
+	private JFrame createFrame() {
+		// "GUI R コンソール"というタイトルのJFrameを作成
+		JFrame frame = new JFrame("GUI R コンソール");
+		// JFrameを閉じたときの動作を'終了'に設定
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// サイズを設定
+		frame.setSize(600, 600); 
+		// 表示する位置を画面の中央に設定
+		frame.setLocationRelativeTo(null); 
+		return frame;
+	}
+}

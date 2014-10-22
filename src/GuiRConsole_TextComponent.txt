@@ -1,0 +1,92 @@
+
+
+import java.awt.BorderLayout;
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextPane;
+import javax.swing.SwingUtilities;
+import javax.swing.border.EmptyBorder;
+
+public class GuiRConsole {
+	
+	// コンソール出力用テキストコンポーネント
+	private JTextPane outputTextPane;
+
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				new GuiRConsole();
+			}
+		});
+	}
+	
+	public GuiRConsole() {
+		initComponents();
+	}
+
+	private void initComponents() {
+		// JFrameを作成
+		JFrame frame = createFrame();
+		
+		// コンソール出力
+		outputTextPane = createOutputTextPane();
+		// コンソール入力
+		JTextArea inputTextArea = createInputTextArea();
+		
+		// JFrameにコンソール出力とコンソール入力を配置する
+		// レイアウトをBorderLayoutに設定
+		frame.setLayout(new BorderLayout());
+		// コンソール出力をJScrollPaneに入れて中央に配置
+		frame.add(new JScrollPane(outputTextPane), BorderLayout.CENTER);
+		// コンソール入力をJScrollPaneに入れて下部（南）に配置
+		frame.add(new JScrollPane(inputTextArea), BorderLayout.SOUTH);
+		
+		// JFrameを表示する
+		frame.setVisible(true);
+	}
+	
+	private JFrame createFrame() {
+		// JFrameはウィンドウ
+		// "GUI R コンソール"というタイトルのJFrameを作成
+		JFrame frame = new JFrame("GUI R コンソール");
+		// JFrameを閉じたときの動作を'破棄'に設定
+		// （標準では'隠す'動作に設定されているが、'隠す'ではウィンドウを閉じてもアプリケーションが終了しない）
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		// サイズを設定
+		frame.setSize(600, 600);
+		// 表示する位置を画面の中央に設定
+		frame.setLocationRelativeTo(null);
+		
+		return frame;
+	}
+	
+	private JTextPane createOutputTextPane() {
+		// JTextPaneは色付け可能なテキストコンポーネント
+		JTextPane outputTextPane = new JTextPane();
+		outputTextPane.setText("ここに出力される"); // 初期表示テキストを設定
+		outputTextPane.setEditable(false); // 編集不可に設定
+		// 等幅フォント サイズ12に設定
+		outputTextPane.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
+		// ボーダー 左右に2のスペース
+		outputTextPane.setBorder(new EmptyBorder(0, 2, 0, 2));
+		
+		return outputTextPane;
+	}
+	
+	private JTextArea createInputTextArea() {
+		// JTextAreaは（色付けなどのできない）テキストコンポーネント
+		JTextArea inputTextArea = new JTextArea("ここに入力する"); // 初期表示テキストを設定
+		inputTextArea.setLineWrap(true); // 行末で折り返すように設定
+		inputTextArea.setRows(2); // 表示領域を2行に設定
+		// 等幅フォント サイズ12に設定
+		inputTextArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
+		// ボーダー 左右に2のスペース
+		inputTextArea.setBorder(new EmptyBorder(0, 2, 0, 2));
+		
+		return inputTextArea;
+	}
+}

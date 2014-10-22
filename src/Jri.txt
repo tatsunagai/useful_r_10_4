@@ -1,0 +1,17 @@
+
+import org.rosuda.REngine.REngineException;
+import org.rosuda.REngine.JRI.JRIEngine;
+
+public class Jri {
+	public static void main(String[] args) {
+		JRIEngine engine = null;
+		try {
+			engine = new JRIEngine();
+			System.out.println("Success");
+		} catch (REngineException e) {
+		} finally {
+			if (engine != null)
+				engine.close();
+		}
+	}
+}

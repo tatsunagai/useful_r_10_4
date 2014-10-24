@@ -80,7 +80,7 @@ public class REXPExample {
 		// 実際のクラスはREXPString
 		REXP character = engine.parseAndEval("c(\"abc\", \"efg\")");
 		if (character.isString()) {
-			String sValue = character.asString(); //　1番目だけ取得
+			String sValue = character.asString(); // 1番目だけ取得
 			String[] sArray = character.asStrings();
 			// NAの判定
 			boolean isNA = sValue == null; // NAはnullで返される
@@ -138,7 +138,7 @@ public class REXPExample {
 		REXP classAttr = iris.getAttribute("class"); // ないときはnull
 		// attribute全体をリストの形で取得
 		// リストの時と同様に処理可能
-		REXPList attrList = iris._attr(); // ないときは、null
+		REXPList attrList = iris._attr(); // ないときはnull
 		if (attrList != null) {
 			RList rList = attrList.asList();
 			classAttr = rList.at("class");

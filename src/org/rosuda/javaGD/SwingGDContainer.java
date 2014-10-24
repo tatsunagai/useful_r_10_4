@@ -109,20 +109,20 @@ public class SwingGDContainer extends JPanel implements GDContainer {
 				RenderingHints.VALUE_RENDER_QUALITY);
 		g2.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL,
 				RenderingHints.VALUE_STROKE_PURE);
-        
-        // ”wŒi‚ğ”’‚Å“h‚é
+		
+		// ”wŒi‚ğ”’‚Å“h‚é
 		Dimension d = getSize();
-        g2.setColor(Color.WHITE);
-        g2.fillRect(0, 0, d.width, d.height);
-        
-        g2.setFont(gdState.f);
-
-        // GDObject‚ğg—p‚µ‚Ä•`‰æ
-        for (GDObject obj : gdObjects) {
+		g2.setColor(Color.WHITE);
+		g2.fillRect(0, 0, d.width, d.height);
+		
+		g2.setFont(gdState.f);
+		
+		// GDObject‚ğg—p‚µ‚Ä•`‰æ
+		for (GDObject obj : gdObjects) {
 			obj.paint(this, gdState, g2);
 		}
-        
-        // ì¬‚µ‚½Graphics2D‚ğ”jŠü
-        g2.dispose();
+		
+		// ì¬‚µ‚½Graphics2D‚ğ”jŠü
+		g2.dispose();
 	}
 }

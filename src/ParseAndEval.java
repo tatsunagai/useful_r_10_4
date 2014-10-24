@@ -10,7 +10,7 @@ public class ParseAndEval {
 	public static void main(String[] args) {
 		JRIEngine engine = null;
 		try {
-			// JRIEngineを作成する。このJRIEngine使用してRと通信する。
+			// JRIEngineを作成する。このJRIEngineを使用してRと通信する。
 			engine = new JRIEngine(new String[0]);
 			
 			// 'sum(1:10)'を実行して結果を取得する

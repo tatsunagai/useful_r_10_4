@@ -1,7 +1,7 @@
 rem remではじまる行はコメント
 
 rem 環境変数R_HOMEにRのインストールディレクトリを設定
-set R_HOME=C:\Program Files\R\R-3.1.0
+set R_HOME=C:\Program Files\R\R-3.1.1
 
 rem 環境変数R_USERにユーザ用ディレクトリを設定（ユーザ名がabcの例）
 set R_USER=C:\Users\abc\Documents

@@ -57,13 +57,13 @@ public class Assign {
 			dataframeList.put("var1", new REXPDouble(new double[]{0, 1.1, 2.2}));
 			dataframeList.put("var2", new REXPString(new String[]{"a", "b", "c"}));
 			engine.assign("myData", REXP.createDataFrame(dataframeList));
-			// マトリックス
+			// 行列
 			double[][] matrix = new double[][]{
 					new double[]{1,2,3},
 					new double[]{4,5,6}
 			};
 			engine.assign("myMatrix", REXP.createDoubleMatrix(matrix));
-			// マトリックス（自分でattributeを設定する）
+			// 行列（自分でattributeを設定する）
 			int[] matrixValues = new int[]{1,2,3,4,5,6};
 			RList matrixAttr = new RList();
 			matrixAttr.put("dim", new REXPInteger(new int[]{2, 3}));

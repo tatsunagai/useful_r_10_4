@@ -18,13 +18,31 @@ h1 {
 	margin: 0 auto;
 }
 
+h2 {
+	padding:3px 5px;
+	border-color:#cccccc;
+	border-width:0px 0px 0px 7px;
+	border-style:solid;
+	background:#F8F8F8;
+}
+
 a {
 	color: #0080C0;
+}
+
+code {
+	font-family: Consolas, Menlo, 'Liberation Mono', Courier, monospace;
+	background:#eee;
+	padding: 2px 4px;
 }
 
 #header {
 	background: #eee;
 	padding: 5px;
+}
+
+li {
+	padding: 0px 0px 5px 0px;
 }
 
 #content {

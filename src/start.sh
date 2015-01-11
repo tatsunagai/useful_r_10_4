@@ -6,6 +6,10 @@
 R_HOME=/usr/lib64/R
 export R_HOME
 
+# 環境変数LD_LIBRARY_PATH libR.soの場所
+LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$R_HOME/lib"
+export LD_LIBRARY_PATH
+
 # Javaのライブラリパス libjri.so(libjri.jnilib)の場所
 LIB_PATH=/usr/lib64/R/library/rJava/jri
 
